@@ -1,5 +1,4 @@
 import random
-import numpy as np
 import cv2
 
 print("Flip a coin")
