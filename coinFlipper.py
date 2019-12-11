@@ -26,3 +26,4 @@ def flipCoin(coin):
 
 coin = Coin()
 flipCoin(coin)
+print("success")
