@@ -32,3 +32,4 @@ def flip_coin(coin):
 
 COIN = Coin()
 flip_coin(COIN)
+print("test")
