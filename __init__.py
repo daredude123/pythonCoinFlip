@@ -1,30 +1,33 @@
 """dang lint"""
 import random
-import cv2
+from PIL import Image
+import sys
+import os
 
-print("Flip a coin")
+data_path = os.path.dirname(os.path.abspath(__file__))+"/data"
 
 class Coin:
     """Coin class"""
     side = "kron" #default side
-    mynt_side_image = cv2.imread("/home/andreas/python/python_CoinFlip/data/mynt.png")
-    kron_side_image = cv2.imread("/home/andreas/python/python_CoinFlip/data/kron.png")
+    mynt_side_image = Image.open(data_path+"/mynt.png")
+    kron_side_image = Image.open(data_path+"/kron.png")
 
     def printside(self):
         """print the side with an image"""
         if self.side == 1:
             self.side = "kron"
-            cv2.imshow('image', self.kron_side_image)
-            cv2.waitKey()
+            self.kron_side_image.show()
+            print(self.side)
         else:
             self.side = "mynt"
-            cv2.imshow('image2', self.mynt_side_image)
-            cv2.waitKey()
+            self.mynt_side_image.show()
+            print(self.side)
+
 
 def flip_coin(coin):
     """FLIP IT"""
     coin.side = random.randint(1, 2)
-    print(coin.printside())
+    coin.printside()
 
 
 COIN = Coin()
