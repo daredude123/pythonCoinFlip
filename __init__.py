@@ -1,8 +1,9 @@
 """dang lint"""
+
 import random
-from PIL import Image
 import sys
 import os
+from PIL import Image
 
 data_path = os.path.dirname(os.path.abspath(__file__))+"/data"
 
